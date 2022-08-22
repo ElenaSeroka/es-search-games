@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch('/api/games-per-year');
+      const data = await fetch('https://elastic-search-games-api.herokuapp.com/api/games-per-year/api/games-per-year');
       const dataArrayJSON = await data.json();
       console.log(dataArrayJSON)
       ClearGraph()
@@ -57,7 +57,7 @@ function App() {
 
   const gamesPerYearChangeData = async () => {
     ClearGraph()
-    const dataArrayJSON = await fetchData('/api/games-per-year')
+    const dataArrayJSON = await fetchData('https://elastic-search-games-api.herokuapp.com/api/games-per-year/api/games-per-year')
     setLabels(dataArrayJSON.length === 0 ? ["pink"] : dataArrayJSON[0].labels)
     setFilteredData(dataArrayJSON.length === 0 ? [0, 0, 0, 0, 0, 0] : dataArrayJSON[0].data.values)
     setTitle(['Games Released Per Year Between 2000 and 2013'])
@@ -66,7 +66,7 @@ function App() {
 
   const gamesPerPublisher = async () => {
     ClearGraph()
-    const dataArrayJSON = await fetchData('/api/games-per-publisher');
+    const dataArrayJSON = await fetchData('https://elastic-search-games-api.herokuapp.com/api/games-per-year/api/games-per-publisher');
     setLabels(dataArrayJSON.length === 0 ? ["pink"] : dataArrayJSON[0].labels)
     setFilteredData(dataArrayJSON.length === 0 ? [0, 0, 0, 0, 0, 0] : dataArrayJSON[0].data[0].values)
     setTitle(['Games Released Per Publisher Between 2000 and 2013'])
