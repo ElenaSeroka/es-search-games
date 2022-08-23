@@ -23,7 +23,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "@lnu"
     ]
   },
   "browserslist": {
@@ -39,6 +40,8 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.4.0"
-  }
+    "@lnu/eslint-config": "^1.1.5"
+  },
+  "description": ""
+
 }
